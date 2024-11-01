@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./pages/Login";
 import HomePage from "./pages/Homepage";
 import Products from "./pages/Product";
 import Pricing from "./pages/Pricing";
@@ -11,6 +12,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="login" element={<Login />} />
         <Route path="product" element={<Products />} />
         <Route path="pricing" element={<Pricing />} />
         <Route path="app" element={<AppLayout />} />
