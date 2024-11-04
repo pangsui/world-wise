@@ -1,8 +1,16 @@
+import styles from "./CityItem.module.css";
 import PropTypes from "prop-types";
 
-import styles from "./CountryItem.module.css";
+const formatDate = (date) =>
+  new Intl.DateTimeFormat("en", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(new Date(date));
 
-function CountryItem({ country }) {
+function CityItem({ city }) {
+  const { cityName, emoji, date } = city;
+
   const flagemojiToPNG = (flag) => {
     var countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt())
       .map((char) => String.fromCharCode(char - 127397).toLowerCase())
@@ -13,15 +21,17 @@ function CountryItem({ country }) {
   };
 
   return (
-    <li className={styles.countryItem}>
-      <span>{flagemojiToPNG(country.emoji)}</span>
-      <span>{country.country}</span>
+    <li className={styles.cityItem}>
+      <span className={styles.emoji}>{flagemojiToPNG(emoji)}</span>
+      <h3 className={styles.name}>{cityName}</h3>
+      <time className={styles.date}>({formatDate(date)})</time>
+      <button className={styles.date}>&times;</button>
     </li>
   );
 }
 
-CountryItem.propTypes = {
-  country: PropTypes.shape({
+CityItem.propTypes = {
+  city: PropTypes.shape({
     id: PropTypes.number.isRequired,
     cityName: PropTypes.string.isRequired,
     country: PropTypes.string.isRequired,
@@ -31,4 +41,4 @@ CountryItem.propTypes = {
   }).isRequired,
 };
 
-export default CountryItem;
+export default CityItem;
