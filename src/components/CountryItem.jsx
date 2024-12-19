@@ -4,7 +4,7 @@ import styles from "./CountryItem.module.css";
 
 function CountryItem({ country }) {
   const flagemojiToPNG = (flag) => {
-    var countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt())
+    const countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt())
       .map((char) => String.fromCharCode(char - 127397).toLowerCase())
       .join("");
     return (
