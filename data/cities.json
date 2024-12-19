@@ -1,7 +1,7 @@
 [
   {
     "id": 73930385,
-    "name": "Lisbon",
+    "cityName": "Lisbon",
     "country": "Portugal",
     "emoji": "🇵🇹",
     "date": "2027-10-31T15:59:59.138Z",
@@ -13,7 +13,7 @@
   },
   {
     "id": 17806751,
-    "name": "Madrid",
+    "cityName": "Madrid",
     "country": "Spain",
     "emoji": "🇪🇸",
     "date": "2027-07-15T08:22:53.976Z",
@@ -25,7 +25,7 @@
   },
   {
     "id": 98443197,
-    "name": "Berlin",
+    "cityName": "Berlin",
     "country": "Germany",
     "emoji": "🇩🇪",
     "date": "2027-02-12T09:24:11.863Z",
